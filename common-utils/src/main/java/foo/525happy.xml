@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<happy>
+	<dynamics>
+		<dynamic mid="8" name="school">
+			<![CDATA[
+			<div class="myDyn">
+				<div class="myDyn_avator">
+					<a href="###"><img src="${userAvator}" alt=""></a>
+				</div>
+				<h2>
+					<a href="http://passport.525happy.com/personal/${userId}">{userName}</a> 
+					<#if access??&& access=='0'>
+						创建学堂
+					</#if>
+					<#elseif access??&&access=='1'>
+						参加学堂
+					</#elseif>
+					<#elseif access??&& access=='2'>
+						分享
+					</#elseif>
+					<#else>
+						默认
+					</#else>
+				</h2>
+				<!--下边是内容 如果 有不同种内容(如 图片 视频 音频)的话 要加条件判断 -->
+				<div class="dtList_a1">								
+					<div class="dtList_a1_tx"><a href="###"><img src="${cover}"></a></div>
+					<h3><a href="###">${title}</a></h3>
+					<p>[${systemLabelF}]</p>
+					<p><span class="f_lgray">主讲人：</span><span>${source_uname}</span><i class="gf_icon_s1 png"></i></p>
+					<p><span class="f_lgray">开启时间：</span><span>9月6日 18：00——9月7日 15：00</span></p>
+					<p class="m_blank"><span class="f_lgray">关联群组：</span>
+						<#if groupNames??>
+							<#list groupNames as groupName>
+								<a href="###">${groupName}</a>
+							</#list>
+						</#if>
+					</p>
+					<p class="m_blank"><span class="f_lgray">学堂标签：</span>
+						<#if schoolLabel??>
+							<#list schoolLabel as label>
+								<a href="###">${label}</a>
+							</#list>
+						</#if>
+					</p>
+				</div>
+				<div class="myDyn_botBtn"><span class="myDyn_bot_l"><a href="###">浏览</a><i>|</i><a href="###">评论</a><em>2012-09-06 13:30:20</em></span></div>
+			</div>
+			]]>
+		</dynamic>
+	</dynamics>
+</happy>
